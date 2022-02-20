@@ -15,20 +15,29 @@ const users = [
     {
         id: 2,
         firstName: "aaaaaaaa",
-        username: "aaaaaaaaaa",
+        lastName: "aaaaaaaaaa",
         email: "aaa@april.biz",
+        password: "asdf",
+        age: 45,
+        city: "Kyiv"
     },
     {
         id: 3,
         firstName: "bbbbbbbbbb",
-        username: "bbbbbbb",
+        lastName: "bbbbbbb",
         email: "bbb@april.biz",
+        password: "098978",
+        age: 60,
+        city: "Lviv"
     },
     {
         id: 4,
         firstName: "ccccccccc",
-        username: "cccccccc",
+        lastName: "cccccccc",
         email: "ccc@april.biz",
+        password: "56ge54",
+        age: 402,
+        city: "Lviv"
     },
 ];
 
@@ -54,12 +63,9 @@ app.get('/users', (req, res) => {
 
 app.get('/users/:id', (req, res) => {
     const {id} = req.params;
-    res.json(users[id]);
+    // res.json(users[id]);
+    res.render('user', {user: users[id-1]});
 })
-
-
-
-
 
 app.post('/login', (req, res) => {
     const ifEmailExist = users.some(value => value.email === req.body.email);
@@ -70,6 +76,11 @@ app.post('/login', (req, res) => {
     }
     res.redirect('/users');
 });
+
+app.use((req, res) => {
+        res.render('pageNotFound')
+    }
+)
 
 
 

@@ -14,17 +14,21 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8 d-flex flex-wrap">
-            {{#each users}}
+            {{#user}}
                 <div class="card mb-4 ms-2" style="width: 18rem;">
                     <div class="card-body">
                         <h5 class="card-title">{{this.firstName}}</h5>
                         <h6 class="card-subtitle mb-2 text-muted">Last name: {{this.lastName}}</h6>
                         <p class="card-text">Email: {{this.email}}</p>
+                        <p class="card-text">Password: {{this.password}}</p>
+                        <p class="card-text">Age: {{this.age}}</p>
+                        <p class="card-text">City: {{this.city}}</p>
+                        <a href="#" class="card-link">Card link</a>
+                        <a href="#" class="card-link">Another link</a>
                     </div>
                 </div>
-            {{/each}}
+            {{/user}}
         </div>
     </div>
-</div>
 </body>
 </html>
