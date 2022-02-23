@@ -13,18 +13,22 @@
 
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8 d-flex flex-wrap">
-            {{#each users}}
-                <div class="card mb-4 ms-2" style="width: 18rem;">
-                    <div class="card-body">
+        <div class="col-md-4">
+            <form action='/signIn' method="post" name="login">
 
-                        <p class="card-text">Email: {{this.email}}</p>
-                        <p class="card-text">Password: {{this.password}}</p>
-                    </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">email</label>
+                    <input type="text" name="email" class="form-control" id="email">
                 </div>
-            {{/each}}
+                <div class="mb-3">
+                    <label for="password" class="form-label">password</label>
+                    <input type="text" name="password" class="form-control" id="password">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
         </div>
     </div>
 </div>
+
 </body>
-</html>
